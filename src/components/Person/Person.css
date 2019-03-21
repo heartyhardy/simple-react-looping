@@ -1,0 +1,26 @@
+.main-div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcyan;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+    box-shadow: 0 2px 5px black;
+    padding: 1rem;
+    margin:1rem;
+}
+
+.name
+{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.age
+{
+    font-family: 'Segoe UI';
+    font-size: 0.75rem;
+}
