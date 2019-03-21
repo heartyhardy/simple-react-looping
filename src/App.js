@@ -246,7 +246,7 @@ class App extends Component {
         {
           users.map(user => {
             return (
-              <Person user={user} />
+              <Person key={user.id} user={user} />
             )
           })
         }
