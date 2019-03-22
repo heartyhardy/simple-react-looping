@@ -239,14 +239,20 @@ class App extends Component {
     ]
   }
 
+  delete_handler = (index) => {
+    let {users} = this.state;
+    users.splice(index, 1);
+    this.setState(users);
+  }
+
   render() {
     const { users } = this.state;
     return (
       <div className="App">
         {
-          users.map(user => {
+          users.map((user,index) => {
             return (
-              <Person key={user.id} user={user} />
+              <Person key={index} user={user} delete={this.delete_handler.bind(index)}/>
             )
           })
         }
