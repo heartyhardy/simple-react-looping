@@ -239,10 +239,11 @@ class App extends Component {
     ]
   }
 
-  delete_handler = (index) => {
-    let {users} = this.state;
-    users.splice(index, 1);
-    this.setState(users);
+  delete_handler = (id) => {
+    // This ensures we don't mutate the statue and update it immutably
+    const users =[...this.state.users];    
+    users.splice(users.findIndex(user => user.id === id), 1);
+    this.setState({users});
   }
 
   render() {
@@ -252,7 +253,7 @@ class App extends Component {
         {
           users.map((user,index) => {
             return (
-              <Person key={index} user={user} delete={this.delete_handler.bind(index)}/>
+              <Person key={user.id} user={user} delete={()=>this.delete_handler(user.id)}/>
             )
           })
         }
